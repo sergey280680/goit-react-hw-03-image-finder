@@ -7,12 +7,12 @@ const modalRoot = document.querySelector("#modal-root");
 export class Modal extends Component {
   componentDidMount() {
     window.addEventListener("keydown", this.handleKeyDown);
-    document.body.style.overflow = "hidden";
+    document.body.style.overflowY = "hidden";
   }
 
   componentWillUnmount() {
     window.removeEventListener("keydown", this.handleKeyDown);
-    document.body.style.overflow = "auto";
+    document.body.style.overflowY = "auto";
   }
 
   handleKeyDown = (e) => {
