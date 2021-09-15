@@ -3,12 +3,6 @@ import { Ul } from "./ImageGallery.styled";
 import { ImageGalleryItem } from "./ImageGalleryItem/ImageGalleryItem";
 
 export class ImageGallery extends Component {
-  componentDidUpdate(prevProps) {
-    if (prevProps.images !== this.props.images) {
-      console.log("JJJJJJJJJJJJJJJJJ");
-    }
-  }
-
   render() {
     const { images, handleSelectImage } = this.props;
 

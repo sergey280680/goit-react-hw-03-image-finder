@@ -33,6 +33,7 @@ export class WrapperGallery extends Component {
           images: [...el.images, ...newImages],
         }));
       }
+
       if (prevState.query !== this.state.query) {
         this.setState({
           images: newImages,
@@ -72,10 +73,12 @@ export class WrapperGallery extends Component {
       }
       this.setState({ status: "resolved" });
 
-      window.scrollTo({
-        top: document.documentElement.scrollHeight,
-        behavior: "smooth",
-      });
+      if (this.state.images.length > 12) {
+        window.scrollTo({
+          top: document.documentElement.scrollHeight - 1230,
+          behavior: "smooth",
+        });
+      }
     }
   }
 

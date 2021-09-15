@@ -1,8 +1,8 @@
-/* html {
+html {
   box-sizing: border-box;
   width: 100vw;
-  overflow-x: hidden;
-} */
+  /* overflow-x: hidden; */
+}
 
 *,
 *::before,
@@ -18,7 +18,7 @@ body {
   background-color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 0 calc(20px - (100vw - 100%)) 0 0;
+  overflow-x: hidden;
 }
 
 img {
