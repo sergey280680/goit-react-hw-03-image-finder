@@ -71,6 +71,7 @@ export class WrapperGallery extends Component {
           }
         );
       }
+
       this.setState({ status: "resolved" });
 
       if (this.state.images.length > 12) {

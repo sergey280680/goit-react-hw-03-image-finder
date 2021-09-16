@@ -4,13 +4,17 @@ const BASE_URL = "https://pixabay.com/api/";
 const KEY = "22022827-e7833ac6793c04553f9ed3424";
 const PER_PAGE = 12;
 
-export const fetchImages = async ({ page = 1, query } = {}) => {
+axios.defaults.baseURL = BASE_URL;
+// axios.defaults.headers.common.Authorization = KEY;
+
+async function fetchImages({ page = 1, query } = {}) {
+  let queryParams = `?q=${query}&key=${KEY}&page=${page}&image_type=photo&orientation=horizontal&per_page=${PER_PAGE}`;
+
   try {
-    const data = await axios(
-      `${BASE_URL}?q=${query}&page=${page}&key=${KEY}&image_type=photo&orientation=horizontal&per_page=${PER_PAGE}`
-    );
+    const data = await axios.get(`${queryParams}`);
     return data;
-  } catch (e) {
-    console.log(e.message);
+  } catch (error) {
+    console.error(error);
   }
-};
+}
+export { fetchImages };
